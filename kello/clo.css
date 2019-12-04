@@ -1,0 +1,36 @@
+html,body {
+    height: 100%;
+}
+body {
+    background: #110505;
+    background: radial-gradient(circle at top,  #255a1c  0%, #000000 40%);
+    
+
+    background-size: 100%;
+    top: -50%;
+    left: 10%;
+}
+p {
+    margin: 0;
+    padding: 0;
+}
+#clock {
+    font-family: 'Share Tech Mono', monospace;
+    color: #ffffff;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%, -50%);
+    color: #daf6ff;
+    text-shadow: 0 0 20px rgb(72, 230, 10),  0 0 20px rgba(10, 175, 230, 0);
+    font-size: 2em;
+}
+.text {
+
+    color: #25f500f1;
+    border-collapse: collapse;
+    border-radius: 15px;
+    border-color: #255a1c;
+    background: radial-gradient(circle at center,  #111410  0%, #00420b 100%);
+}
