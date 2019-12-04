@@ -2,8 +2,13 @@ html,body {
     height: 100%;
 }
 body {
-    background: #110505;
-    background: radial-gradient(circle at top,  #255a1c  0%, #000000 40%);
+    background: #1ad4c5;
+    background: radial-gradient(circle at 50%,  #0f5c5f  0%, #163947  15%,   #000000 60%);
+               
+}
+.clockback {
+    background: #15be1e;
+  
     
 
     background-size: 100%;
@@ -20,17 +25,23 @@ p {
     text-align: center;
     position: absolute;
     left: 50%;
-    top: 20%;
+    top: 50%;
     transform: translate(-50%, -50%);
-    color: #daf6ff;
-    text-shadow: 0 0 20px rgb(72, 230, 10),  0 0 20px rgba(10, 175, 230, 0);
+    color: #f0f7fa;
+    text-shadow: 0 0 20px rgb(41, 212, 218),  0 0 20px rgba(10, 175, 230, 0);
     font-size: 2em;
 }
 .text {
-
-    color: #25f500f1;
+    
+    color: #00e1f5f1;
     border-collapse: collapse;
     border-radius: 15px;
     border-color: #255a1c;
     background: radial-gradient(circle at center,  #111410  0%, #00420b 100%);
+}
+.footer {
+    color: rgb(50, 182, 205);
+    text-align: center;
+    top: 100%;
+    position: relative;
 }
