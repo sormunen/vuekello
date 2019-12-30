@@ -8,7 +8,7 @@ var clock = new Vue({
     }
 });
 
-var week = ['Maanantai', 'Tiistai', 'Keskiviikko', 'Torstai', 'Perjantai', 'Lauantai', 'Sunnuntai'];
+var week = ['Sunnuntai', 'Maanantai', 'Tiistai', 'Keskiviikko', 'Torstai', 'Perjantai', 'Lauantai'];
 var weekAmount = function(){
     return new Date().getWeek();
 }
@@ -28,7 +28,7 @@ var timerID = setInterval(updateTime, 1000);
 updateTime();
 function updateTime() {
     var cd = new Date();
-    clock.day = week[cd.getDay()-1];
+    clock.day = week[cd.getDay()];
     clock.time = zeroPadding(cd.getHours(), 2) + ':' + zeroPadding(cd.getMinutes(), 2) + ':' + zeroPadding(cd.getSeconds(), 2);
     clock.date = zeroPadding(cd.getDate(), 2) + '-' + zeroPadding(cd.getMonth()+1, 2) + '-' + zeroPadding(cd.getFullYear(), 4);
      clock.weekNum =  zeroPadding(weekAmount());
