@@ -1,9 +1,11 @@
 var clock = new Vue({
     el: '#clock',
     data: {
+        today: 'Tänään on ',
         day: '',
         time: '',
         date: '',
+        wnText: 'Viikkonumero',
         weekNum:''
     }
 });

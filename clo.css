@@ -86,3 +86,13 @@ p {
         box-shadow: 0 0 0 0 rgba(44,169,150, 0);
     }
   }
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity 0.7s;
+}
+.fade-enter, .fade-leave-to {
+    opacity: 0.0;
+}
+.greetUser {
+    display: inline-block;
+ 
+}

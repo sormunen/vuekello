@@ -15,16 +15,22 @@
     <body>
         <div class="clockback">
         <div id="clock">
-            <p class="day">Tänään on {{ day }}</p>
+            <p class="day">{{today}} {{ day }}</p>
             <hr/>
             <p class="date">{{ date }}</p>
             <br/>
             <p class="time"> {{ time }}</p>
             <br/>
-            <p class="week">Viikko Numero: {{weekNum}}</p>
-            <hr/>
-            <p class="pulse">Vuekello</p>
-        </div></div>
+            <p class="week">{{wnText}} {{weekNum}}</p>
+            <hr/><transition name="fade">
+            <p id="Vuekello" v-on:click="show = !show" v-if="!show" class="pulse">Vue</p>
+            </transition><transition>
+            <p v-if="show" v-on:click="show = !show" class="pulse">Kello</p>
+        
+            </transition>
+        </div>
+    
+    </div>
         <footer class="footer">Roni Sormunen 2019 ©</footer>
         <script src="clo.js" async defer></script>
     </body>
