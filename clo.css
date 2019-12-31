@@ -49,8 +49,6 @@ p {
 .pulse {
     margin:100px;
     display: inline;
-    width: inherit;
-    height: inherit;
     border-radius: 50%;
     background: inherit;
     cursor: pointer;
