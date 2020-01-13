@@ -12,6 +12,7 @@
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
         <link rel="stylesheet" href="clo.css">
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        
     </head>
     <body>
         <div class="clockback">
@@ -24,15 +25,16 @@
             <br/>
             <p class="week">{{wnText}} {{weekNum}}</p>
             <hr/><transition name="fade">
-            <p id="Vuekello" v-on:click="show = !show" v-if="!show" class="pulse">Vue</p>
-            </transition><transition>
-            <p v-if="show" v-on:click="show = !show" class="pulse">Kello</p>
+            <p id="Vuekello" >{{ show }}</p>
+            </transition><!-- <transition>
+            <p v-if="show" v-on:click="showT = !showT" class="pulse">{{show}}</p>
         
-            </transition>
+            </transition> -->
         </div>
     
     </div>
-        <footer class="footer">Roni Sormunen 2019 ©</footer>
+        <footer class="footer">Roni Sormunen 2020 ©</footer>
         <script src="clo.js" async defer></script>
+        <script src="clickello.js"></script>
     </body>
 </html>
