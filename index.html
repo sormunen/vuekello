@@ -16,17 +16,19 @@
         
     </head>
     <body>
-        <div class="clockback">
+        <div class="clockback" onload="giveFlag()">
         <div id="clock">
             <p class="day">{{today}} {{ day }}</p>
             <hr/>
+            <div id="langFlag">
             <p class="date">{{ date }}</p>
             <br/>
             <p class="time"> {{ time }}</p>
             <br/>
             <p class="week">{{wnText}} {{weekNum}}</p>
+        </div>
             <hr/>
-                <p class="pulse" id="changeLang" v-on:click="toggleLang">{{ button.text }}</p>
+                <p class="pulse flagFin" id="changeLang" v-on:click="toggleLang">{{ button.text }}</p>
             <!-- <transition name="fade"> 
                 
             </transition> -->

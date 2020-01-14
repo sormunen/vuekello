@@ -1,33 +1,49 @@
 var clock = new Vue({
     el: '#clock',
     data: {
-        today: 'Today is ',
+        today: 'Tänään on ',
         day: '',
         time: '',
         date: '',
-        wnText: 'Week number ',
+        wnText: 'Viikkonumero ',
         weekNum:'',
         button: {
-      text: 'Change Language'
+      text: 'Suomi'
     },
     lang: true
     },
     
     methods: {
+      giveFlag: function() {
+        document.getElementById("changeLang").classList.add('flagFin');
+
+
+      },
       toggleLang: function() {
-        clock.lang = !clock.lang;
-        if(clock.button.text === 'Language') {
-          clock.today = clock.lang ? 'Today is ' : 'Tänään on ',
-          clock.wnText = clock.lang ? 'Week number ' : 'Viikkonumero ',
-          clock.button.text = clock.lang ? 'Chage Language' : ' Vaihda Kieli';
-        }
-        else
-        clock.today = clock.lang ? 'Tänään on ' :'Today is ',
-          clock.wnText = clock.lang ? 'Viikkonumero ' : 'Week number ',
-        clock.button.text = clock.lang ? 'Vaihda Kieli' : 'Change Language';
         
+        clock.lang = !clock.lang;
+        if(clock.button.text === 'Suomi') {
+          clock.today = clock.lang ? 'Tänään on ' :'Today is ',
+          clock.wnText = clock.lang ? 'Viikkonumero ' : 'Week number ',
+          document.getElementById("changeLang").classList.toggle('flagUk'),
+        clock.button.text = clock.lang ? 'Suomi' : 'English';
+        
+        }
+        /* else if (clock.button.text === 'Deutsch'){
+          clock.today = clock.lang ? 'Heute ist ' : 'Tänään on ',
+          clock.wnText = clock.lang ? 'Kalenderwoche ' : 'Viikkonumero ',
+          clock.button.text = clock.lang ? 'Deutsch' : ' Suomi';
+        } */
+        else
+         clock.today = clock.lang ? 'Today is ' : 'Tänään on ',
+          clock.wnText = clock.lang ? 'Week number ' : 'Viikkonumero ',
+          clock.button.text = clock.lang ? 'English' : ' Suomi';
+          if ( document.getElementById("changeLang").classList.contains('flagFin') ){
+
+          document.getElementById("changeLang").classList.toggle('flagUk');}
       }
     }
+    
 });
 
 var weekFi = ['Sunnuntai', 'Maanantai', 'Tiistai', 'Keskiviikko', 'Torstai', 'Perjantai', 'Lauantai'];
@@ -55,11 +71,17 @@ var timerID = setInterval(updateTime, 1000);
 updateTime();
 function updateTime() {
     var cd = new Date();
-    if(clock.button.text === 'Change Language') {
+    if(clock.button.text === 'English') {
       clock.day = weekEn[cd.getDay()];
+      
     }
+    /* else if (clock.button.text === 'Deutsch') {
+      clock.day = weekDe[cd.getDay()];
+      console.log(clock.button.text)
+    } */
     else {
       clock.day = weekFi[cd.getDay()];
+      
     }
 
     clock.time = zeroPadding(cd.getHours(), 2) + ':' + zeroPadding(cd.getMinutes(), 2) + ':' + zeroPadding(cd.getSeconds(), 2);

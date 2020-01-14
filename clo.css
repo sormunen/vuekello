@@ -99,3 +99,34 @@ p {
     padding: 5px;
 
 }
+.flagFin {
+  
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Flag_of_Finland.svg/2000px-Flag_of_Finland.svg.png");
+
+    background-size: contain;
+    color: #adafaf;
+}
+.flagFin:hover {
+    
+    background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Flag_of_Finland.svg/2000px-Flag_of_Finland.svg.png");
+    background-size: contain;
+    opacity: 100%;
+    font-weight: 700;
+    color: #25d7f6fa;
+}
+.flagUk {
+     background-image: url("https://cdn.pixabay.com/photo/2015/11/06/13/29/union-jack-1027898_960_720.jpg");
+    
+ 
+     background-size: contain;
+     color: #adafaf;
+ }
+ .flagUk:hover {
+     
+     background: url("https://cdn.pixabay.com/photo/2015/11/06/13/29/union-jack-1027898_960_720.jpg");
+     background-size: contain;
+     opacity: 100%;
+     font-weight: 700;
+     color: #25d7f6fa;
+ }
+ 
