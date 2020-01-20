@@ -20,8 +20,8 @@
         <div class="clockback" >
         <div id="clock"><transition
     name="custom-classes-transition"
-    enter-active-class="animated tada"
-    leave-active-class="animated bounceOutRight">
+    enter-active-class="animated fadeInDownBig"
+    leave-active-class="animated fadeOutUpBig">
             <p class="day" v-if="show" key="fin">{{today}} {{ day }}</p>
             
             <p class="day" v-else="show" key="eng">{{today}} {{ day }}</p>
@@ -33,7 +33,14 @@
             <br/>
             <p class="time"> {{ time }}</p>
             <br/>
-            <p class="week">{{wnText}} {{weekNum}}</p>
+            <transition
+    name="custom-classes-transition"
+    enter-active-class="animated fadeInLeftBig"
+    leave-active-class="animated fadeOutRightBig">
+            <p class="week" v-if="show" key="fin">{{wnText}} {{weekNum}}</p>
+            <p class="week" v-else="show" key="eng">{{wnText}} {{weekNum}}</p>
+        
+        </transition>
         </div>
             <hr/>
                 <div  @click="show = !show">
