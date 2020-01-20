@@ -25,7 +25,7 @@ var clock = new Vue({
         if(clock.button.text === 'Suomi') {
           clock.today = clock.lang ? 'Tänään on ' :'Today is ',
           clock.wnText = clock.lang ? 'Viikkonumero ' : 'Week number ',
-          document.getElementById("changeLang").classList.toggle('flagUk'),
+          document.getElementById("changeLang").classList.remove('flagUk'),
         clock.button.text = clock.lang ? 'Suomi' : 'English';
         
         }
@@ -35,12 +35,10 @@ var clock = new Vue({
           clock.button.text = clock.lang ? 'Deutsch' : ' Suomi';
         } */
         else
-         clock.today = clock.lang ? 'Today is ' : 'Tänään on ',
-          clock.wnText = clock.lang ? 'Week number ' : 'Viikkonumero ',
-          clock.button.text = clock.lang ? 'English' : ' Suomi';
-          if ( document.getElementById("changeLang").classList.contains('flagFin') ){
-
-          document.getElementById("changeLang").classList.toggle('flagUk');}
+         clock.today = !clock.lang ? 'Today is ' : 'Tänään on ',
+          clock.wnText = !clock.lang ? 'Week number ' : 'Viikkonumero ',
+          clock.button.text = !clock.lang ? 'English' : ' Suomi';
+          document.getElementById("changeLang").classList.toggle('flagUk');
       }
     }
     

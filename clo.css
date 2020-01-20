@@ -117,15 +117,16 @@ p {
 .flagUk {
      background-image: url("https://cdn.pixabay.com/photo/2015/11/06/13/29/union-jack-1027898_960_720.jpg");
     
- 
-     background-size: contain;
+        background-repeat: no-repeat;
+     background-size: 100%;
      color: #adafaf;
  }
  .flagUk:hover {
      
      background: url("https://cdn.pixabay.com/photo/2015/11/06/13/29/union-jack-1027898_960_720.jpg");
-     background-size: contain;
+     background-size: cover;
      opacity: 100%;
+     background-repeat: no-repeat;
      font-weight: 700;
      color: #25d7f6fa;
  }

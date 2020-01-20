@@ -16,7 +16,7 @@
         
     </head>
     <body>
-        <div class="clockback" onload="giveFlag()">
+        <div class="clockback" >
         <div id="clock">
             <p class="day">{{today}} {{ day }}</p>
             <hr/>
@@ -28,7 +28,7 @@
             <p class="week">{{wnText}} {{weekNum}}</p>
         </div>
             <hr/>
-                <p class="pulse flagFin" id="changeLang" v-on:click="toggleLang">{{ button.text }}</p>
+                <p class="pulse flagFin" id="changeLang" @click="toggleLang">{{ button.text }}</p>
             <!-- <transition name="fade"> 
                 
             </transition> -->
