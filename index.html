@@ -13,12 +13,20 @@
         <link rel="stylesheet" href="clo.css">
         <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABILAAASCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAABYAAAAAAAAAAAAAAAAAAAAxAAAAXgAAAA0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAIYAAAD+AAAAmwAAAAMAAAAAAAAATQAAAP4AAAAlAAAAAAAAAAAAAAAAAAAALAAAANUAAABZAAAAiAAAAIgAAAD+AAAA/wAAAP8AAABcAAAALwAAAPkAAAD/AAAAIAAAAAAAAAAAAAAAAAAAAAUAAADnAAAAnAAAAJEAAAAbAAAAgwAAAP0AAAD/AAAAywAAAK0AAAD/AAAA/wAAALoAAAC8AAAAuQAAAHMAAABLAAAA/wAAAIIAAACYAAAAAAAAAAAAAACyAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/gAAAP8AAADyAAAAogAAAAAAAAAAAAAAoQAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAOIAAAAAAAAAAAAAAMEAAAD2AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAADnAAAAAAAAAAAAAAAXAAAAbwAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAeAAAAAAAAAAAAAAAAAAAAAEAAACBAAAA9gAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAjwAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABYAAABbAAAAQQAAABgAAAAoAAAAVAAAAHEAAAA+AAAAHwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//8AAP//AAD//wAAnH8AAARwAAAAcAAAAAAAAMAAAADAAAAAwAAAAMAAAADgAAAA+AEAAP//AAD//wAA//8AAA==" rel="icon" type="image/x-icon">
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
         
     </head>
     <body>
         <div class="clockback" >
-        <div id="clock">
-            <p class="day">{{today}} {{ day }}</p>
+        <div id="clock"><transition
+    name="custom-classes-transition"
+    enter-active-class="animated tada"
+    leave-active-class="animated bounceOutRight">
+            <p class="day" v-if="show" key="fin">{{today}} {{ day }}</p>
+            
+            <p class="day" v-else="show" key="eng">{{today}} {{ day }}</p>
+            
+        </transition>
             <hr/>
             <div id="langFlag">
             <p class="date">{{ date }}</p>
@@ -28,10 +36,12 @@
             <p class="week">{{wnText}} {{weekNum}}</p>
         </div>
             <hr/>
-                <p class="pulse flagFin" id="changeLang" @click="toggleLang">{{ button.text }}</p>
-            <!-- <transition name="fade"> 
+                <div  @click="show = !show">
+                    
+                <p class="pulse flagFin" id="changeLang" @click="toggleLang">{{ button.text }}</p></div>
+            
                 
-            </transition> -->
+            
         <br/>
         <!-- <p id="Vuekello" >{{ show }}</p> -->
         </div>

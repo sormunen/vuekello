@@ -7,6 +7,7 @@ var clock = new Vue({
         date: '',
         wnText: 'Viikkonumero ',
         weekNum:'',
+        show: true,
         button: {
       text: 'Suomi'
     },
@@ -125,3 +126,4 @@ function zeroPadding(num, digit) {
       }
     }
   }); */
+
